@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Blog.Core.Repositories;
 using Blog.Infrastructure.Repositories;
+using Blog.Core;
+using Blog.Infrastructure;
 
 namespace BlogDemo.Api
 {
@@ -32,6 +34,7 @@ namespace BlogDemo.Api
             });
 
             services.AddScoped<IPostRepository, PostRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
