@@ -17,3 +17,22 @@ F:\王槐三\C#10\BlogDemo\BlogDemo.Api\obj\Debug\netcoreapp2.1\BlogDemo.Api.Raz
 F:\王槐三\C#10\BlogDemo\BlogDemo.Api\obj\Debug\netcoreapp2.1\BlogDemo.Api.csproj.CopyComplete
 F:\王槐三\C#10\BlogDemo\BlogDemo.Api\obj\Debug\netcoreapp2.1\BlogDemo.Api.dll
 F:\王槐三\C#10\BlogDemo\BlogDemo.Api\obj\Debug\netcoreapp2.1\BlogDemo.Api.pdb
+F:\王槐三\C#10\GitHub_ Repository\BlogDemo\BlogDemo.Api\bin\Debug\netcoreapp2.1\BlogDemo.Api.deps.json
+F:\王槐三\C#10\GitHub_ Repository\BlogDemo\BlogDemo.Api\bin\Debug\netcoreapp2.1\BlogDemo.Api.runtimeconfig.json
+F:\王槐三\C#10\GitHub_ Repository\BlogDemo\BlogDemo.Api\bin\Debug\netcoreapp2.1\BlogDemo.Api.runtimeconfig.dev.json
+F:\王槐三\C#10\GitHub_ Repository\BlogDemo\BlogDemo.Api\bin\Debug\netcoreapp2.1\BlogDemo.Api.dll
+F:\王槐三\C#10\GitHub_ Repository\BlogDemo\BlogDemo.Api\bin\Debug\netcoreapp2.1\BlogDemo.Api.pdb
+F:\王槐三\C#10\GitHub_ Repository\BlogDemo\BlogDemo.Api\bin\Debug\netcoreapp2.1\Blog.Core.dll
+F:\王槐三\C#10\GitHub_ Repository\BlogDemo\BlogDemo.Api\bin\Debug\netcoreapp2.1\Blog.Infrastructure.dll
+F:\王槐三\C#10\GitHub_ Repository\BlogDemo\BlogDemo.Api\bin\Debug\netcoreapp2.1\Blog.Core.pdb
+F:\王槐三\C#10\GitHub_ Repository\BlogDemo\BlogDemo.Api\bin\Debug\netcoreapp2.1\Blog.Infrastructure.pdb
+F:\王槐三\C#10\GitHub_ Repository\BlogDemo\BlogDemo.Api\obj\Debug\netcoreapp2.1\BlogDemo.Api.csprojAssemblyReference.cache
+F:\王槐三\C#10\GitHub_ Repository\BlogDemo\BlogDemo.Api\obj\Debug\netcoreapp2.1\BlogDemo.Api.csproj.CoreCompileInputs.cache
+F:\王槐三\C#10\GitHub_ Repository\BlogDemo\BlogDemo.Api\obj\Debug\netcoreapp2.1\BlogDemo.Api.RazorAssemblyInfo.cache
+F:\王槐三\C#10\GitHub_ Repository\BlogDemo\BlogDemo.Api\obj\Debug\netcoreapp2.1\BlogDemo.Api.RazorAssemblyInfo.cs
+F:\王槐三\C#10\GitHub_ Repository\BlogDemo\BlogDemo.Api\obj\Debug\netcoreapp2.1\BlogDemo.Api.AssemblyInfoInputs.cache
+F:\王槐三\C#10\GitHub_ Repository\BlogDemo\BlogDemo.Api\obj\Debug\netcoreapp2.1\BlogDemo.Api.AssemblyInfo.cs
+F:\王槐三\C#10\GitHub_ Repository\BlogDemo\BlogDemo.Api\obj\Debug\netcoreapp2.1\BlogDemo.Api.RazorTargetAssemblyInfo.cache
+F:\王槐三\C#10\GitHub_ Repository\BlogDemo\BlogDemo.Api\obj\Debug\netcoreapp2.1\BlogDemo.Api.csproj.CopyComplete
+F:\王槐三\C#10\GitHub_ Repository\BlogDemo\BlogDemo.Api\obj\Debug\netcoreapp2.1\BlogDemo.Api.dll
+F:\王槐三\C#10\GitHub_ Repository\BlogDemo\BlogDemo.Api\obj\Debug\netcoreapp2.1\BlogDemo.Api.pdb

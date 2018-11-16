@@ -3536,11 +3536,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\王槐三\\C#10\\BlogDemo\\Blog.Infrastructure\\Blog.Infrastructure.csproj",
+      "projectUniqueName": "F:\\王槐三\\C#10\\GitHub_ Repository\\BlogDemo\\Blog.Infrastructure\\Blog.Infrastructure.csproj",
       "projectName": "Blog.Infrastructure",
-      "projectPath": "F:\\王槐三\\C#10\\BlogDemo\\Blog.Infrastructure\\Blog.Infrastructure.csproj",
+      "projectPath": "F:\\王槐三\\C#10\\GitHub_ Repository\\BlogDemo\\Blog.Infrastructure\\Blog.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "F:\\王槐三\\C#10\\BlogDemo\\Blog.Infrastructure\\obj\\",
+      "outputPath": "F:\\王槐三\\C#10\\GitHub_ Repository\\BlogDemo\\Blog.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3559,8 +3559,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "F:\\王槐三\\C#10\\BlogDemo\\Blog.Core\\Blog.Core.csproj": {
-              "projectPath": "F:\\王槐三\\C#10\\BlogDemo\\Blog.Core\\Blog.Core.csproj"
+            "F:\\王槐三\\C#10\\GitHub_ Repository\\BlogDemo\\Blog.Core\\Blog.Core.csproj": {
+              "projectPath": "F:\\王槐三\\C#10\\GitHub_ Repository\\BlogDemo\\Blog.Core\\Blog.Core.csproj"
             }
           }
         }

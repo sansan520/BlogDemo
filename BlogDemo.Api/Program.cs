@@ -18,22 +18,23 @@ namespace BlogDemo.Api
         public static void Main(string[] args)
         {
             IWebHost host = CreateWebHostBuilder(args).Build();
-            //初始化数据库 不是必须的
-            using (var scope = host.Services.CreateScope())
-            {
-                var services = scope.ServiceProvider;
-                var loggerFactory = services.GetRequiredService<ILoggerFactory>();
-                try
-                {
-                    var myContext = services.GetRequiredService<MyContext>();
-                    MyContextSeed.SeedAsync(myContext, loggerFactory).Wait();
-                }
-                catch (Exception e)
-                {
-                    var logger = loggerFactory.CreateLogger<Program>();
-                    logger.LogError(e,"初始化数据库失败");
-                }
-            }
+            #region 初始化数据库 不是必须的
+            //using (var scope = host.Services.CreateScope())
+            //{
+            //    var services = scope.ServiceProvider;
+            //    var loggerFactory = services.GetRequiredService<ILoggerFactory>();
+            //    try
+            //    {
+            //        var myContext = services.GetRequiredService<MyContext>();
+            //        MyContextSeed.SeedAsync(myContext, loggerFactory).Wait();
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        var logger = loggerFactory.CreateLogger<Program>();
+            //        logger.LogError(e,"初始化数据库失败");
+            //    }
+            //} 
+            #endregion
             host.Run();
         }
 
