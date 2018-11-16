@@ -1,0 +1,8 @@
+F:\王槐三\C#10\BlogDemo\Blog.Core\bin\Debug\netcoreapp2.1\Blog.Core.deps.json
+F:\王槐三\C#10\BlogDemo\Blog.Core\bin\Debug\netcoreapp2.1\Blog.Core.dll
+F:\王槐三\C#10\BlogDemo\Blog.Core\bin\Debug\netcoreapp2.1\Blog.Core.pdb
+F:\王槐三\C#10\BlogDemo\Blog.Core\obj\Debug\netcoreapp2.1\Blog.Core.csproj.CoreCompileInputs.cache
+F:\王槐三\C#10\BlogDemo\Blog.Core\obj\Debug\netcoreapp2.1\Blog.Core.AssemblyInfoInputs.cache
+F:\王槐三\C#10\BlogDemo\Blog.Core\obj\Debug\netcoreapp2.1\Blog.Core.AssemblyInfo.cs
+F:\王槐三\C#10\BlogDemo\Blog.Core\obj\Debug\netcoreapp2.1\Blog.Core.dll
+F:\王槐三\C#10\BlogDemo\Blog.Core\obj\Debug\netcoreapp2.1\Blog.Core.pdb

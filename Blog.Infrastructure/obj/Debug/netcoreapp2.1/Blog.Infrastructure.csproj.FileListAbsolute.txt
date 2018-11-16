@@ -1,0 +1,14 @@
+F:\王槐三\C#10\BlogDemo\Blog.Infrastructure\bin\Debug\netcoreapp2.1\Blog.Infrastructure.deps.json
+F:\王槐三\C#10\BlogDemo\Blog.Infrastructure\bin\Debug\netcoreapp2.1\Blog.Infrastructure.dll
+F:\王槐三\C#10\BlogDemo\Blog.Infrastructure\bin\Debug\netcoreapp2.1\Blog.Infrastructure.pdb
+F:\王槐三\C#10\BlogDemo\Blog.Infrastructure\bin\Debug\netcoreapp2.1\Blog.Core.dll
+F:\王槐三\C#10\BlogDemo\Blog.Infrastructure\bin\Debug\netcoreapp2.1\Blog.Core.pdb
+F:\王槐三\C#10\BlogDemo\Blog.Infrastructure\obj\Debug\netcoreapp2.1\Blog.Infrastructure.csprojAssemblyReference.cache
+F:\王槐三\C#10\BlogDemo\Blog.Infrastructure\obj\Debug\netcoreapp2.1\Blog.Infrastructure.csproj.CoreCompileInputs.cache
+F:\王槐三\C#10\BlogDemo\Blog.Infrastructure\obj\Debug\netcoreapp2.1\Blog.Infrastructure.AssemblyInfoInputs.cache
+F:\王槐三\C#10\BlogDemo\Blog.Infrastructure\obj\Debug\netcoreapp2.1\Blog.Infrastructure.AssemblyInfo.cs
+F:\王槐三\C#10\BlogDemo\Blog.Infrastructure\obj\Debug\netcoreapp2.1\Blog.Infrastructure.csproj.CopyComplete
+F:\王槐三\C#10\BlogDemo\Blog.Infrastructure\obj\Debug\netcoreapp2.1\Blog.Infrastructure.dll
+F:\王槐三\C#10\BlogDemo\Blog.Infrastructure\obj\Debug\netcoreapp2.1\Blog.Infrastructure.pdb
+F:\王槐三\C#10\BlogDemo\Blog.Infrastructure\bin\Debug\netcoreapp2.1\Blog.Infrastructure.runtimeconfig.json
+F:\王槐三\C#10\BlogDemo\Blog.Infrastructure\bin\Debug\netcoreapp2.1\Blog.Infrastructure.runtimeconfig.dev.json
