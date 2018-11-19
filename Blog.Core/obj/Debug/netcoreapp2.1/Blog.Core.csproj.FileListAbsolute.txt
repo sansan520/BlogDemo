@@ -23,4 +23,3 @@ F:\王槐三\C#10\GitHub_ Repository\BlogDemo\Blog.Core\obj\Debug\netcoreapp2.1\
 F:\王槐三\C#10\GitHub_ Repository\BlogDemo\Blog.Core\obj\Debug\netcoreapp2.1\Blog.Core.AssemblyInfo.cs
 F:\王槐三\C#10\GitHub_ Repository\BlogDemo\Blog.Core\obj\Debug\netcoreapp2.1\Blog.Core.dll
 F:\王槐三\C#10\GitHub_ Repository\BlogDemo\Blog.Core\obj\Debug\netcoreapp2.1\Blog.Core.pdb
-F:\王槐三\C#10\GitHub_ Repository\BlogDemo\Blog.Core\obj\Debug\netcoreapp2.1\Blog.Core.csprojAssemblyReference.cache

@@ -15,6 +15,7 @@ using Blog.Core;
 using Blog.Infrastructure;
 using BlogDemo.Api.Extensions;
 using Microsoft.Extensions.Logging;
+using AutoMapper;
 
 namespace BlogDemo.Api
 {
@@ -52,8 +53,12 @@ namespace BlogDemo.Api
             }); 
 
             #endregion
+
             services.AddScoped<IPostRepository, PostRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            //使用aotumapper
+            services.AddAutoMapper();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

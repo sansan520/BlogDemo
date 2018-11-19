@@ -7,6 +7,8 @@ using Blog.Core.Repositories;
 using Blog.Core;
 using Blog.Core.Entities;
 using Microsoft.Extensions.Logging;
+using AutoMapper;
+using BlogDemo.Api.DTOResources;
 
 namespace BlogDemo.Api.Controllers
 {
@@ -16,20 +18,23 @@ namespace BlogDemo.Api.Controllers
         private readonly IPostRepository _postRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly ILogger _logger;
+        private readonly IMapper _mapper;
 
-        public PostseedController(IPostRepository postRepository, IUnitOfWork unitOfWork,ILoggerFactory loggerFactory)
+        public PostseedController(IPostRepository postRepository, IUnitOfWork unitOfWork,ILoggerFactory loggerFactory, IMapper mapper)
         {
             _postRepository = postRepository;
             _unitOfWork = unitOfWork;
             _logger = loggerFactory.CreateLogger("BlogDemo.Api.Controllers.PostseedController");
+            _mapper = mapper;
         }
 
         [HttpGet]
         public async Task<IActionResult>  Get()
         {
             var posts = await _postRepository.GetAllPostsAsync();
-            _logger.LogError("Get all posts....hello...");
-            return Ok(posts);
+            var postsDto = _mapper.Map<IEnumerable<Post>,IEnumerable<PostResource>>(posts);
+            //_logger.LogInformation("Get all posts....hello...");
+            return Ok(postsDto);
         }
 
         [HttpPost]
