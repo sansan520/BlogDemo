@@ -68,3 +68,87 @@ FROM [Posts] AS [p]
 2018-11-19 10:46:40.836 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Core.Entities.Post, Blog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
 2018-11-19 10:46:41.001 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostseedController.Get (BlogDemo.Api) in 4373.3493ms
 2018-11-19 10:46:41.015 +08:00 [INF] Request finished in 5179.7522ms 200 application/json; charset=utf-8
+2018-11-19 11:03:41.157 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-19 11:03:42.474 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-11-19 11:03:42.474 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-11-19 11:03:44.793 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/posts  
+2018-11-19 11:03:44.929 +08:00 [INF] Request finished in 139.8903ms 307 
+2018-11-19 11:03:45.109 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/posts  
+2018-11-19 11:03:45.688 +08:00 [INF] Route matched with {action = "Get", controller = "Postseed"}. Executing action BlogDemo.Api.Controllers.PostseedController.Get (BlogDemo.Api)
+2018-11-19 11:03:46.334 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostseedController.Get (BlogDemo.Api) - Validation state: "Valid"
+2018-11-19 11:03:46.672 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-11-19 11:03:51.778 +08:00 [INF] Executed DbCommand (342ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Title]
+FROM [Posts] AS [p]
+2018-11-19 11:03:51.894 +08:00 [ERR] Get all posts....hello...
+2018-11-19 11:03:51.904 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostseedController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5546.7539000000006ms.
+2018-11-19 11:03:51.939 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Core.Entities.Post, Blog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-11-19 11:03:52.093 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostseedController.Get (BlogDemo.Api) in 6392.0953ms
+2018-11-19 11:03:52.108 +08:00 [INF] Request finished in 6998.5488ms 200 application/json; charset=utf-8
+2018-11-19 11:31:21.687 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-19 11:31:30.404 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-11-19 11:31:30.404 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-11-19 11:31:33.023 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/posts  
+2018-11-19 11:31:33.162 +08:00 [INF] Request finished in 140.1192ms 307 
+2018-11-19 11:31:33.327 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/posts  
+2018-11-19 11:31:33.632 +08:00 [INF] Route matched with {action = "Get", controller = "Postseed"}. Executing action BlogDemo.Api.Controllers.PostseedController.Get (BlogDemo.Api)
+2018-11-19 11:31:34.104 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostseedController.Get (BlogDemo.Api) - Validation state: "Valid"
+2018-11-19 11:31:34.406 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-11-19 11:31:42.408 +08:00 [INF] Executed DbCommand (302ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Title]
+FROM [Posts] AS [p]
+2018-11-19 11:31:42.574 +08:00 [ERR] Get all posts....hello...
+2018-11-19 11:31:42.588 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostseedController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 8466.5518000000011ms.
+2018-11-19 11:31:42.630 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Core.Entities.Post, Blog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-11-19 11:31:42.802 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostseedController.Get (BlogDemo.Api) in 9146.5779ms
+2018-11-19 11:31:42.816 +08:00 [INF] Request finished in 9489.0439ms 200 application/json; charset=utf-8
+2018-11-19 11:32:04.492 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/posts/123  
+2018-11-19 11:32:04.494 +08:00 [INF] Request finished in 2.3219ms 404 
