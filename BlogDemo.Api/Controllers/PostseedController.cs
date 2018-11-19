@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Blog.Core.Repositories;
 using Blog.Core;
 using Blog.Core.Entities;
+using Microsoft.Extensions.Logging;
 
 namespace BlogDemo.Api.Controllers
 {
@@ -14,17 +15,20 @@ namespace BlogDemo.Api.Controllers
     {
         private readonly IPostRepository _postRepository;
         private readonly IUnitOfWork _unitOfWork;
-        public PostseedController(IPostRepository postRepository, IUnitOfWork unitOfWork)
+        private readonly ILogger _logger;
+
+        public PostseedController(IPostRepository postRepository, IUnitOfWork unitOfWork,ILoggerFactory loggerFactory)
         {
             _postRepository = postRepository;
             _unitOfWork = unitOfWork;
-
+            _logger = loggerFactory.CreateLogger("BlogDemo.Api.Controllers.PostseedController");
         }
 
         [HttpGet]
         public async Task<IActionResult>  Get()
         {
             var posts = await _postRepository.GetAllPostsAsync();
+            _logger.LogError("Get all posts....hello...");
             return Ok(posts);
         }
 
