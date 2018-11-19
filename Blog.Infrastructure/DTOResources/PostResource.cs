@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BlogDemo.Api.DTOResources
+namespace Blog.Infrastructure.DTOResources
 {
     public class PostResource
     {

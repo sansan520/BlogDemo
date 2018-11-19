@@ -8,7 +8,7 @@ using Blog.Core;
 using Blog.Core.Entities;
 using Microsoft.Extensions.Logging;
 using AutoMapper;
-using BlogDemo.Api.DTOResources;
+using Blog.Infrastructure.DTOResources;
 
 namespace BlogDemo.Api.Controllers
 {
