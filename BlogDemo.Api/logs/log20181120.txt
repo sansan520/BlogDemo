@@ -376,3 +376,56 @@ OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
 2018-11-20 14:26:41.148 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Infrastructure.DTOResources.PostResource, Blog.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
 2018-11-20 14:26:41.154 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostseedController.Get (BlogDemo.Api) in 97705.2504ms
 2018-11-20 14:26:41.165 +08:00 [INF] Request finished in 97741.2887ms 200 application/json; charset=utf-8
+2018-11-20 14:35:31.385 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-11-20 14:35:34.691 +08:00 [INF] Executed DbCommand (100ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Title]
+FROM [Posts] AS [p]
+2018-11-20 14:35:34.822 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-20 14:35:35.588 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-11-20 14:35:37.442 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Posts  
+2018-11-20 14:35:37.509 +08:00 [INF] Request finished in 67.3782ms 307 
+2018-11-20 14:35:37.797 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Posts  
+2018-11-20 14:35:38.028 +08:00 [INF] Route matched with {action = "Get", controller = "Postseed"}. Executing action BlogDemo.Api.Controllers.PostseedController.Get (BlogDemo.Api)
+2018-11-20 14:35:38.922 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostseedController.Get (BlogDemo.Api) with arguments (["Blog.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-11-20 14:36:03.644 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-11-20 14:36:03.852 +08:00 [INF] Executed DbCommand (107ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-11-20 14:36:04.658 +08:00 [WRN] Query: '(from Post <generated>_2 in DbSet<Post> select [<generated>_2]).Skip(__p_0).Take(__p_1)' uses a row limiting operation (Skip/Take) without OrderBy which may lead to unpredictable results.
+2018-11-20 14:36:04.778 +08:00 [INF] Executed DbCommand (90ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-11-20 14:36:15.316 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostseedController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 36373.66ms.
+2018-11-20 14:36:15.342 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Infrastructure.Resources.PostResource, Blog.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-11-20 14:36:17.911 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostseedController.Get (BlogDemo.Api) in 39867.9942ms
+2018-11-20 14:36:17.935 +08:00 [INF] Request finished in 40138.3282ms 200 application/json; charset=utf-8
+2018-11-20 14:36:29.462 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Posts  
+2018-11-20 14:36:29.466 +08:00 [INF] Route matched with {action = "Get", controller = "Postseed"}. Executing action BlogDemo.Api.Controllers.PostseedController.Get (BlogDemo.Api)
+2018-11-20 14:36:29.522 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostseedController.Get (BlogDemo.Api) with arguments (["Blog.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-11-20 14:36:51.463 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-11-20 14:36:51.520 +08:00 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-11-20 14:36:51.582 +08:00 [INF] Executed DbCommand (56ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-11-20 14:36:53.105 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostseedController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 23578.798300000002ms.
+2018-11-20 14:36:53.117 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Blog.Infrastructure.Resources.PostResource, Blog.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-11-20 14:36:53.123 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostseedController.Get (BlogDemo.Api) in 23653.856600000003ms
+2018-11-20 14:36:53.129 +08:00 [INF] Request finished in 23666.8801ms 200 application/json; charset=utf-8

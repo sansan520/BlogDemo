@@ -4,7 +4,7 @@ using Blog.Core.Entities;
 using Blog.Infrastructure.PropertyMappingServices;
 
 
-namespace Blog.Infrastructure.DTOResources
+namespace Blog.Infrastructure.Resources
 {
     public class PostPropertyMapping : PropertyMapping<PostResource, Post>
     {

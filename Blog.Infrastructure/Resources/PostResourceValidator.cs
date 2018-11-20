@@ -1,9 +1,7 @@
 ﻿using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Blog.Infrastructure.DTOResources
+
+namespace Blog.Infrastructure.Resources
 {
     public class PostResourceValidator: AbstractValidator<PostResource>
     {

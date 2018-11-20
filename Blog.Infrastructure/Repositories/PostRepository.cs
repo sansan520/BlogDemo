@@ -1,7 +1,7 @@
 ﻿using Blog.Core.Entities;
 using Blog.Core.Repositories;
 using Blog.Infrastructure.DataBase;
-using Blog.Infrastructure.DTOResources;
+using Blog.Infrastructure.Resources;
 using Blog.Infrastructure.Extensions;
 using Blog.Infrastructure.PropertyMappingServices;
 using Microsoft.EntityFrameworkCore;

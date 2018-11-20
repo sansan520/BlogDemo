@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Blog.Core.Entities;
-using Blog.Infrastructure.DTOResources;
+using Blog.Infrastructure.Resources;
 
 namespace BlogDemo.Api.Extensions
 {

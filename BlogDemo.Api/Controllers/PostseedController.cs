@@ -8,7 +8,7 @@ using Blog.Core;
 using Blog.Core.Entities;
 using Microsoft.Extensions.Logging;
 using AutoMapper;
-using Blog.Infrastructure.DTOResources;
+using Blog.Infrastructure.Resources;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
@@ -46,12 +46,12 @@ namespace BlogDemo.Api.Controllers
                 CreatePostUri(parameters, PaginationResourceUriType.NextPage) : null;
             var meta = new
             {
-                PageSize = posts.PageSize,
-                PageIndex = posts.PageIndex,
-                TotalItemsCount = posts.TotalItemsCount,
-                PageCount = posts.PageCount,
-                previousPageLink = previousPageLink,
-                nextPageLink = nextPageLink,
+                posts.PageSize,
+                posts.PageIndex,
+                posts.TotalItemsCount,
+                posts.PageCount,
+                previousPageLink,
+                nextPageLink,
             };
             Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(meta, new JsonSerializerSettings
             {

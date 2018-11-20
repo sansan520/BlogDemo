@@ -17,7 +17,7 @@ using BlogDemo.Api.Extensions;
 using Microsoft.Extensions.Logging;
 using AutoMapper;
 using FluentValidation;
-using Blog.Infrastructure.DTOResources;
+using Blog.Infrastructure.Resources;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
