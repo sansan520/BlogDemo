@@ -3,7 +3,7 @@ using Blog.Core.Repositories;
 using Blog.Infrastructure.DataBase;
 using Blog.Infrastructure.Resources;
 using Blog.Infrastructure.Extensions;
-using Blog.Infrastructure.PropertyMappingServices;
+using Blog.Infrastructure.HelperServices;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;

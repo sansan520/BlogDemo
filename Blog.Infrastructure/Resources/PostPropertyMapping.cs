@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Blog.Core.Entities;
-using Blog.Infrastructure.PropertyMappingServices;
+using Blog.Infrastructure.HelperServices;
 
 
 namespace Blog.Infrastructure.Resources

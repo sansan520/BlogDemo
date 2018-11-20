@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Blog.Core.Interface;
 
-namespace Blog.Infrastructure.PropertyMappingServices
+namespace Blog.Infrastructure.HelperServices
 {
     public class PropertyMappingContainer : IPropertyMappingContainer
     {

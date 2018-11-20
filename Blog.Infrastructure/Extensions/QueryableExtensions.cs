@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Dynamic.Core;
-using Blog.Infrastructure.PropertyMappingServices;
+using Blog.Infrastructure.HelperServices;
 
 namespace Blog.Infrastructure.Extensions
 {

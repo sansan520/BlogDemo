@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Blog.Infrastructure.PropertyMappingServices
+namespace Blog.Infrastructure.HelperServices
 {
     public class MappedProperty
     {

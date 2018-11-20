@@ -22,7 +22,8 @@ using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Routing;
-using Blog.Infrastructure.PropertyMappingServices;
+using Blog.Infrastructure.HelperServices;
+using Newtonsoft.Json.Serialization;
 
 namespace BlogDemo.Api
 {
@@ -49,8 +50,12 @@ namespace BlogDemo.Api
                 options.ReturnHttpNotAcceptable = true;
                 //net core 默认返回格式为json,这里添加xml格式 key=Accept value=application/xml
                 options.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
+            })
+            .AddJsonOptions(options=> {
+                // 确保json返回为驼峰类型，即首字母小写
+                options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             });
-
+            
             #region 读取json配置文件
             //services.AddDbContext<MyContext>(options=> {
             //    options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=BlogDemo;Trusted_Connection=True;MultipleActiveResultSets=true");
@@ -83,6 +88,8 @@ namespace BlogDemo.Api
             var propertyMappingContainer = new PropertyMappingContainer();
             propertyMappingContainer.Register<PostPropertyMapping>();
             services.AddSingleton<IPropertyMappingContainer>(propertyMappingContainer);
+            //添加自定义方法,controller ctor方法注入时使用
+            services.AddTransient<ITypeService, TypeService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
