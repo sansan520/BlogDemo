@@ -18,6 +18,11 @@ using Microsoft.Extensions.Logging;
 using AutoMapper;
 using FluentValidation;
 using Blog.Infrastructure.DTOResources;
+using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Routing;
+using Blog.Infrastructure.PropertyMappingServices;
 
 namespace BlogDemo.Api
 {
@@ -39,7 +44,12 @@ namespace BlogDemo.Api
                 config.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect;
                 config.HttpsPort = 5001;  //与launchSettings.json 配置文件保持一致
             });
-            services.AddMvc();
+            services.AddMvc(options=> {
+                // 启用http 内容协商，客户端 accept header 支持406
+                options.ReturnHttpNotAcceptable = true;
+                //net core 默认返回格式为json,这里添加xml格式 key=Accept value=application/xml
+                options.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
+            });
 
             #region 读取json配置文件
             //services.AddDbContext<MyContext>(options=> {
@@ -62,6 +72,17 @@ namespace BlogDemo.Api
             services.AddAutoMapper();
             //fluentValidation
             services.AddTransient<IValidator<PostResource>, PostResourceValidator>();
+            //添加urlhelper
+            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
+            services.AddScoped<IUrlHelper>(factory =>
+            {
+                var actionContext = factory.GetService<IActionContextAccessor>().ActionContext;
+                return new UrlHelper(actionContext);
+            });
+            //添加自定义属性排序容器
+            var propertyMappingContainer = new PropertyMappingContainer();
+            propertyMappingContainer.Register<PostPropertyMapping>();
+            services.AddSingleton<IPropertyMappingContainer>(propertyMappingContainer);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

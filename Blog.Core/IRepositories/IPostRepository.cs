@@ -8,7 +8,9 @@ namespace Blog.Core.Repositories
 {
     public interface IPostRepository
     {
-        Task<IEnumerable<Post>> GetAllPostsAsync();
+        Task<PaginatedList<Post>> GetAllPostsAsync(PostParameters parameters);
+
+        Task<Post> GetPostByid(int id);
         void AddPost(Post entity);
     }
 }
