@@ -10,7 +10,9 @@ namespace Blog.Core.Repositories
     {
         Task<PaginatedList<Post>> GetAllPostsAsync(PostParameters parameters);
 
-        Task<Post> GetPostByid(int id);
+        Task<Post> GetPostByIdAsync(int id);
         void AddPost(Post entity);
+        void Delete(Post post);
+        void Update(Post post);
     }
 }

@@ -14,6 +14,7 @@ using Newtonsoft.Json.Serialization;
 using Blog.Infrastructure.Extensions;
 using Blog.Infrastructure.HelperServices;
 using BlogDemo.Api.Helpers;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace BlogDemo.Api.Controllers
 {
@@ -52,7 +53,7 @@ namespace BlogDemo.Api.Controllers
             {
                 return BadRequest("Can't finds fields for sorting."); //若请求排序参数中有dto类不存在的字段属性，则返回400错误
             }
-            if (_typeService.TypeHasProperties<PostResource>(parameters.Fields))
+            if (!_typeService.TypeHasProperties<PostResource>(parameters.Fields))
             {
                 return BadRequest("Fields not exist."); ; //若请求参数中有dto类不存在的字段属性，则返回400错误
             }
@@ -86,7 +87,7 @@ namespace BlogDemo.Api.Controllers
                 ContractResolver = new CamelCasePropertyNamesContractResolver()
             }));
             #endregion
-            return Ok(shapedPostResources);
+            return Ok(result);
         }
 
         /// <summary>
@@ -100,50 +101,52 @@ namespace BlogDemo.Api.Controllers
         {
             if (!_propertyMappingContainer.ValidateMappingExistsFor<PostResource, Post>(parameters.OrderBy))
             {
-                return BadRequest("Can't finds fields for sorting."); //若请求排序参数中有dto类不存在的字段属性，则返回400错误
+                return BadRequest("Can't finds fields for sorting.");
             }
-            if (_typeService.TypeHasProperties<PostResource>(parameters.Fields)) {
-                return BadRequest("Fields not exist."); ; //若请求参数中有dto类不存在的字段属性，则返回400错误
+
+            if (!_typeService.TypeHasProperties<PostResource>(parameters.Fields))
+            {
+                return BadRequest("Fields not exist.");
             }
-            var posts = await _postRepository.GetAllPostsAsync(parameters);
-            IEnumerable<PostResource> postsDto = _mapper.Map<IEnumerable<Post>,IEnumerable<PostResource>>(posts);
-            //?fields=id,title,body,author 客户端可指定需要返回的字段<-->资源塑型
 
-            var result = postsDto.ToDynamicIEnumerable(parameters.Fields);
-            //_logger.LogInformation("Get all posts....hello...");
-            #region 添加额外的header信息
-            //添加返回header - 分页信息
-            var previousPageLink = posts.HasPrevious ?
-                CreatePostUri(parameters, PaginationResourceUriType.PreviousPage) : null;
+            var postList = await _postRepository.GetAllPostsAsync(parameters);
 
-            var nextPageLink = posts.HasNext ?
-                CreatePostUri(parameters, PaginationResourceUriType.NextPage) : null;
+            var postResources = _mapper.Map<IEnumerable<Post>, IEnumerable<PostResource>>(postList);
+
+            var previousPageLink = postList.HasPrevious ?
+                CreatePostUri(parameters,
+                    PaginationResourceUriType.PreviousPage) : null;
+
+            var nextPageLink = postList.HasNext ?
+                CreatePostUri(parameters,
+                    PaginationResourceUriType.NextPage) : null;
+
             var meta = new
             {
-                posts.PageSize,
-                posts.PageIndex,
-                posts.TotalItemsCount,
-                posts.PageCount,
+                postList.TotalItemsCount,
+                postList.PageSize,
+                postList.PageIndex,
+                postList.PageCount,
                 previousPageLink,
-                nextPageLink,
+                nextPageLink
             };
+
             Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(meta, new JsonSerializerSettings
             {
                 ContractResolver = new CamelCasePropertyNamesContractResolver()
-            })); 
-            #endregion
-            return Ok(result);
+            }));
+            // 根据参数field 进行定制返回
+            return Ok(postResources.ToDynamicIEnumerable(parameters.Fields));
         }
 
-        [HttpGet("{id}")]
-        //[HttpGet("{id}", Name = "GetPost")]
+        [HttpGet("{id}", Name = "GetPost")]
         public async Task<IActionResult> Get(int id,string fields=null)
         {
             if (!_typeService.TypeHasProperties<PostResource>(fields))
             {
                 return BadRequest("Fields not exist.");
             }
-            var post = await _postRepository.GetPostByid(id);
+            var post = await _postRepository.GetPostByIdAsync(id);
             if (null==post) {
                 return NotFound();
             }
@@ -157,21 +160,123 @@ namespace BlogDemo.Api.Controllers
             return Ok(result);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Post()
+        [HttpPost(Name = "CreatePost")]
+        [RequestHeaderMatchingMediaType("Content-Type", new[] { "application/vnd.huaisan.post.create+json" })]
+        [RequestHeaderMatchingMediaType("Accept", new[] { "application/vnd.huaisan.hateoas+json" })]
+        public async Task<IActionResult> Post([FromBody] PostAddResource postAddResource)
         {
-            var entity = new Post
+            if (postAddResource == null)
             {
-                Author = "huaisan",
-                Body = "hello huaisan",
-                Title = "Title of huaisan",
-                LastModified = DateTime.Now
-            };
-            _postRepository.AddPost(entity);
-            await _unitOfWork.SaveAsync();
-            return Ok();
+                return BadRequest();
+            }
+            if (!ModelState.IsValid) {
+                return new MyUnprocessableEntityObjectResult(ModelState); //自定义错误输出（比较符合）
+                //return UnprocessableEntity(ModelState); // 原生错误类型输出
+            }
+
+            var newPost = _mapper.Map<PostAddResource, Post>(postAddResource);
+            newPost.Author = "admin";
+            newPost.LastModified = DateTime.Now;
+            _postRepository.AddPost(newPost);
+            if (!await _unitOfWork.SaveAsync())
+            {
+                throw new Exception("添加保存失败！");
+            }
+            var resultResource = _mapper.Map<Post, PostResource>(newPost);
+            var links = CreateLinksForPost(newPost.Id);
+            var linkedPostResource = resultResource.ToDynamic() as IDictionary<string, object>;
+            linkedPostResource.Add("links", links);
+
+            return CreatedAtRoute("GetPost", new { id = linkedPostResource["Id"] }, linkedPostResource);
+
         }
 
+        [HttpDelete("{id}", Name = "DeletePost")]
+        public async Task<IActionResult> DeletePost(int id)
+        {
+            var post = await _postRepository.GetPostByIdAsync(id);
+            if (post == null)
+            {
+                return NotFound();
+            }
+
+            _postRepository.Delete(post);
+
+            if (!await _unitOfWork.SaveAsync())
+            {
+                throw new Exception($"Deleting post {id} failed when saving.");
+            }
+
+            return NoContent();
+        }
+
+        [HttpPut("{id}", Name = "UpdatePost")]
+        [RequestHeaderMatchingMediaType("Content-Type", new[] { "application/vnd.huaisan.post.update+json" })]
+        public async Task<IActionResult> UpdatePost(int id, [FromBody] PostUpdateResource postUpdate)
+        {
+            if (postUpdate == null)
+            {
+                return BadRequest();
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return new MyUnprocessableEntityObjectResult(ModelState);
+            }
+
+            var post = await _postRepository.GetPostByIdAsync(id);
+            if (post == null)
+            {
+                return NotFound();
+            }
+
+            post.LastModified = DateTime.Now;
+            _mapper.Map(postUpdate, post);
+
+            if (!await _unitOfWork.SaveAsync())
+            {
+                throw new Exception($"Updating post {id} failed when saving.");
+            }
+            return NoContent();
+        }
+
+
+        [HttpPatch("{id}", Name = "PartiallyUpdatePost")]
+        public async Task<IActionResult> PartiallyUpdateCityForCountry(int id, [FromBody] JsonPatchDocument<PostUpdateResource> patchDoc)
+        {
+            if (patchDoc == null)
+            {
+                return BadRequest();
+            }
+
+            var post = await _postRepository.GetPostByIdAsync(id);
+            if (post == null)
+            {
+                return NotFound();
+            }
+
+            var postToPatch = _mapper.Map<PostUpdateResource>(post);
+
+            patchDoc.ApplyTo(postToPatch, ModelState);
+
+            TryValidateModel(postToPatch);
+
+            if (!ModelState.IsValid)
+            {
+                return new MyUnprocessableEntityObjectResult(ModelState);
+            }
+
+            _mapper.Map(postToPatch, post);
+            post.LastModified = DateTime.Now;
+            _postRepository.Update(post);
+
+            if (!await _unitOfWork.SaveAsync())
+            {
+                throw new Exception($"Patching city {id} failed when saving.");
+            }
+
+            return NoContent();
+        }
 
         private string CreatePostUri(PostParameters parameters, PaginationResourceUriType uriType)
         {
@@ -214,7 +319,7 @@ namespace BlogDemo.Api.Controllers
 
             if (string.IsNullOrWhiteSpace(fields))
             {
-                links.Add( new LinkResource( _urlHelper.Link("GetPost", new { id }), "self", "GET"));
+                links.Add(new LinkResource( _urlHelper.Link("GetPost", new { id }), "self", "GET"));
             }
             else
             {

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Blog.Infrastructure.DataBase;
+﻿using Blog.Infrastructure.DataBase;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,6 +19,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Blog.Infrastructure.HelperServices;
 using Newtonsoft.Json.Serialization;
+using FluentValidation.AspNetCore;
+using System.Linq;
 
 namespace BlogDemo.Api
 {
@@ -49,12 +46,26 @@ namespace BlogDemo.Api
                 // 启用http 内容协商，客户端 accept header 支持406
                 options.ReturnHttpNotAcceptable = true;
                 //net core 默认返回格式为json,这里添加xml格式 key=Accept value=application/xml
-                options.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
+                //options.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
+                //自定义Media Type
+                var intputFormatter = options.InputFormatters.OfType<JsonInputFormatter>().FirstOrDefault();
+                if (intputFormatter != null)
+                {
+                    intputFormatter.SupportedMediaTypes.Add("application/vnd.huaisan.post.create+json");
+                    intputFormatter.SupportedMediaTypes.Add("application/vnd.huaisan.post.update+json");
+                }
+
+                var outputFormatter = options.OutputFormatters.OfType<JsonOutputFormatter>().FirstOrDefault();
+                if (outputFormatter != null)
+                {
+                    outputFormatter.SupportedMediaTypes.Add("application/vnd.huaisan.hateoas+json");
+                }
             })
             .AddJsonOptions(options=> {
                 // 确保json返回为驼峰类型，即首字母小写
                 options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-            });
+            })
+            .AddFluentValidation();
             
             #region 读取json配置文件
             //services.AddDbContext<MyContext>(options=> {
@@ -76,7 +87,9 @@ namespace BlogDemo.Api
             //使用aotumapper
             services.AddAutoMapper();
             //fluentValidation
-            services.AddTransient<IValidator<PostResource>, PostResourceValidator>();
+            services.AddTransient<IValidator<PostAddResource>, PostAddOrUpdateResourceValidator<PostAddResource>>();
+            services.AddTransient<IValidator<PostUpdateResource>, PostAddOrUpdateResourceValidator<PostUpdateResource>>();
+
             //添加urlhelper
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.AddScoped<IUrlHelper>(factory =>

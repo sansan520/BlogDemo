@@ -56,10 +56,20 @@ namespace Blog.Infrastructure.Repositories
         {
             _myContext.Posts.Add(post);
         }
-
-        public async Task<Post> GetPostByid(int id)
+        public async Task<Post> GetPostByIdAsync(int id)
         {
             return await _myContext.Posts.FindAsync(id);
+        }
+
+
+        public void Delete(Post post)
+        {
+            _myContext.Posts.Remove(post);
+        }
+
+        public void Update(Post post)
+        {
+            _myContext.Entry(post).State = EntityState.Modified;
         }
     }
 }

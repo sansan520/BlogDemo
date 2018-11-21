@@ -1,0 +1,58 @@
+2018-11-21 16:09:03.585 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-11-21 16:09:12.337 +08:00 [INF] Executed DbCommand (175ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Title]
+FROM [Posts] AS [p]
+2018-11-21 16:09:12.457 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-21 16:09:13.288 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-11-21 16:09:13.288 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-11-21 16:09:15.051 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Posts  
+2018-11-21 16:09:15.130 +08:00 [INF] Request finished in 84.1864ms 307 
+2018-11-21 16:09:15.276 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Posts  
+2018-11-21 16:09:15.634 +08:00 [INF] Request finished in 357.8039ms 404 
+2018-11-21 16:09:19.930 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-11-21 16:09:19.960 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/posts application/json 48
+2018-11-21 16:09:19.964 +08:00 [INF] Request finished in 3.8014ms 404 
+2018-11-21 16:09:20.001 +08:00 [INF] Connection id "0HLIFH2FMOOGD", Request id "0HLIFH2FMOOGD:00000001": the application completed without reading the entire request body.
+2018-11-21 16:09:24.165 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/posts application/vnd.huaisan.post.create+json 48
+2018-11-21 16:09:24.218 +08:00 [INF] Route matched with {action = "Post", controller = "Postseed"}. Executing action BlogDemo.Api.Controllers.PostseedController.Post (BlogDemo.Api)
+2018-11-21 16:09:24.977 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostseedController.Post (BlogDemo.Api) with arguments (["Blog.Infrastructure.Resources.PostAddResource"]) - Validation state: "Invalid"
+2018-11-21 16:09:24.996 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostseedController.Post (BlogDemo.Api), returned result BlogDemo.Api.Helpers.MyUnprocessableEntityObjectResult in 5.0604000000000005ms.
+2018-11-21 16:09:25.010 +08:00 [INF] Executing ObjectResult, writing value of type 'BlogDemo.Api.Helpers.ResourceValidationResult'.
+2018-11-21 16:09:25.032 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostseedController.Post (BlogDemo.Api) in 807.0348ms
+2018-11-21 16:09:25.037 +08:00 [INF] Request finished in 873.0459ms 422 application/vnd.huaisan.hateoas+json; charset=utf-8
