@@ -1,0 +1,198 @@
+2018-11-27 16:44:54.672 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-11-27 16:45:05.206 +08:00 [INF] Executed DbCommand (577ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Title]
+FROM [Posts] AS [p]
+2018-11-27 16:45:05.578 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-27 16:45:06.459 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-11-27 16:45:08.183 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Posts  
+2018-11-27 16:45:08.263 +08:00 [INF] Request finished in 81.889ms 307 
+2018-11-27 16:45:08.454 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/Posts  
+2018-11-27 16:45:08.511 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-11-27 16:45:08.751 +08:00 [INF] Request finished in 296.5719ms 404 
+2018-11-27 16:45:43.083 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-11-27 16:45:43.101 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/values application/x-www-form-urlencoded 64
+2018-11-27 16:45:43.104 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-11-27 16:45:43.108 +08:00 [INF] Request finished in 7.2057ms 404 
+2018-11-27 16:45:43.128 +08:00 [INF] Connection id "0HLIK8IGNOIO6", Request id "0HLIK8IGNOIO6:00000001": the application completed without reading the entire request body.
+2018-11-27 16:46:06.989 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/values application/x-www-form-urlencoded 64
+2018-11-27 16:46:06.993 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-11-27 16:46:07.000 +08:00 [INF] Request finished in 11.2948ms 404 
+2018-11-27 16:46:07.018 +08:00 [INF] Connection id "0HLIK8IGNOIO6", Request id "0HLIK8IGNOIO6:00000002": the application completed without reading the entire request body.
+2018-11-27 16:46:11.066 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/api/values application/x-www-form-urlencoded 0
+2018-11-27 16:46:11.070 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-11-27 16:46:11.071 +08:00 [INF] Request finished in 5.1614ms 404 
+2018-11-27 16:47:16.299 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-11-27 16:47:17.473 +08:00 [INF] Executed DbCommand (220ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Title]
+FROM [Posts] AS [p]
+2018-11-27 16:47:17.594 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-27 16:47:18.504 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-11-27 16:47:18.504 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-11-27 16:47:20.156 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/  
+2018-11-27 16:47:20.216 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-11-27 16:47:20.377 +08:00 [INF] Request finished in 222.2096ms 404 
+2018-11-27 16:47:53.576 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-11-27 16:47:53.624 +08:00 [INF] Request starting HTTP/1.1 POST https://localhost:6001/api/AuthTest application/x-www-form-urlencoded 0
+2018-11-27 16:47:53.626 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-11-27 16:47:53.652 +08:00 [INF] Request finished in 28.199ms 404 
+2018-11-27 16:47:57.152 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/AuthTest application/x-www-form-urlencoded 
+2018-11-27 16:47:57.154 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-11-27 16:47:57.168 +08:00 [INF] Route matched with {action = "Get", controller = "AuthTest"}. Executing action BlogDemo.Api.Controllers.AuthTestController.Get (BlogDemo.Api)
+2018-11-27 16:47:57.189 +08:00 [INF] Authorization failed.
+2018-11-27 16:47:57.195 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-11-27 16:47:57.203 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-11-27 16:47:57.359 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-11-27 16:47:57.361 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-11-27 16:47:57.366 +08:00 [INF] Executed action BlogDemo.Api.Controllers.AuthTestController.Get (BlogDemo.Api) in 191.8829ms
+2018-11-27 16:47:57.372 +08:00 [INF] Request finished in 219.9399ms 401 
+2018-11-27 16:48:14.981 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/AuthTest application/x-www-form-urlencoded 
+2018-11-27 16:48:14.983 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-11-27 16:48:14.987 +08:00 [INF] Route matched with {action = "Get", controller = "AuthTest"}. Executing action BlogDemo.Api.Controllers.AuthTestController.Get (BlogDemo.Api)
+2018-11-27 16:48:14.993 +08:00 [INF] Authorization failed.
+2018-11-27 16:48:14.997 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-11-27 16:48:15.001 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-11-27 16:48:15.010 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-11-27 16:48:15.013 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-11-27 16:48:15.018 +08:00 [INF] Executed action BlogDemo.Api.Controllers.AuthTestController.Get (BlogDemo.Api) in 24.9185ms
+2018-11-27 16:48:15.020 +08:00 [INF] Request finished in 39.683ms 401 
+2018-11-27 16:48:26.997 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/AuthTest  
+2018-11-27 16:48:27.009 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-11-27 16:48:27.011 +08:00 [INF] Route matched with {action = "Get", controller = "AuthTest"}. Executing action BlogDemo.Api.Controllers.AuthTestController.Get (BlogDemo.Api)
+2018-11-27 16:48:27.040 +08:00 [INF] Authorization failed.
+2018-11-27 16:48:27.042 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-11-27 16:48:27.044 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-11-27 16:48:27.046 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-11-27 16:48:27.048 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-11-27 16:48:27.049 +08:00 [INF] Executed action BlogDemo.Api.Controllers.AuthTestController.Get (BlogDemo.Api) in 9.0882ms
+2018-11-27 16:48:27.052 +08:00 [INF] Request finished in 56.3586ms 401 
+2018-11-27 16:48:27.177 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/favicon.ico  
+2018-11-27 16:48:27.179 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-11-27 16:48:27.181 +08:00 [INF] Request finished in 4.4977ms 404 
+2018-11-27 16:49:43.533 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-11-27 16:49:44.073 +08:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Title]
+FROM [Posts] AS [p]
+2018-11-27 16:49:44.185 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-11-27 16:49:44.947 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-11-27 16:49:44.947 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-11-27 16:49:46.069 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/  
+2018-11-27 16:49:46.344 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-11-27 16:49:46.528 +08:00 [INF] Request finished in 462.7329ms 404 
+2018-11-27 16:52:03.701 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-11-27 16:52:03.726 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/AuthTest application/x-www-form-urlencoded 837
+2018-11-27 16:52:03.734 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-11-27 16:52:03.777 +08:00 [INF] Route matched with {action = "Get", controller = "AuthTest"}. Executing action BlogDemo.Api.Controllers.AuthTestController.Get (BlogDemo.Api)
+2018-11-27 16:52:03.795 +08:00 [INF] Authorization failed.
+2018-11-27 16:52:03.800 +08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-11-27 16:52:03.808 +08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2018-11-27 16:52:03.833 +08:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2018-11-27 16:52:03.835 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2018-11-27 16:52:03.840 +08:00 [INF] Executed action BlogDemo.Api.Controllers.AuthTestController.Get (BlogDemo.Api) in 55.4371ms
+2018-11-27 16:52:03.842 +08:00 [INF] Request finished in 116.832ms 401 
+2018-11-27 16:52:03.861 +08:00 [INF] Connection id "0HLIK8L3O6G38", Request id "0HLIK8L3O6G38:00000001": the application completed without reading the entire request body.
+2018-11-27 16:52:29.257 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/AuthTest application/x-www-form-urlencoded 
+2018-11-27 16:52:30.045 +08:00 [INF] Successfully validated the token.
+2018-11-27 16:52:30.052 +08:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2018-11-27 16:52:30.055 +08:00 [INF] Route matched with {action = "Get", controller = "AuthTest"}. Executing action BlogDemo.Api.Controllers.AuthTestController.Get (BlogDemo.Api)
+2018-11-27 16:52:30.058 +08:00 [INF] Authorization was successful.
+2018-11-27 16:52:30.071 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.AuthTestController.Get (BlogDemo.Api) - Validation state: "Valid"
+2018-11-27 16:52:30.078 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.AuthTestController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1.1902000000000001ms.
+2018-11-27 16:52:30.094 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Linq.Enumerable+SelectEnumerableIterator`2[[System.Security.Claims.Claim, System.Security.Claims, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-11-27 16:52:30.121 +08:00 [INF] Executed action BlogDemo.Api.Controllers.AuthTestController.Get (BlogDemo.Api) in 64.1323ms
+2018-11-27 16:52:30.128 +08:00 [INF] Request finished in 870.5976ms 200 application/json; charset=utf-8

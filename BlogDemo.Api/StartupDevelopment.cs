@@ -42,6 +42,15 @@ namespace BlogDemo.Api
                 config.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect;
                 config.HttpsPort = 5001;  //与launchSettings.json 配置文件保持一致
             });
+            //启用授权
+            services.AddAuthorization();
+            //启用验证
+            services.AddAuthentication("Bearer")
+                .AddIdentityServerAuthentication(options=> {
+                    options.RequireHttpsMetadata = true;
+                    options.Authority = "https://localhost:5001";
+                    options.ApiName = "socialnetwork";
+                });
             services.AddMvc(options=> {
                 // 启用http 内容协商，客户端 accept header 支持406
                 options.ReturnHttpNotAcceptable = true;
@@ -112,6 +121,8 @@ namespace BlogDemo.Api
             //app.UseDeveloperExceptionPage();//为开发人员启用的错误页面，方便查看错误以及调试，正式环境可取消<-> webapi 可用也可不用，webapi 可返回自定义的错误码等
             app.UseHuaisanExceptionHandler(loggerFactory);
             app.UseHttpsRedirection();// https
+            //这句话就是在把验证中间件添加到管道里, 这样每次请求就会调用验证服务了. 一定要在UserMvc()之前调用
+            app.UseAuthentication();
             app.UseMvc();
         }
     }
