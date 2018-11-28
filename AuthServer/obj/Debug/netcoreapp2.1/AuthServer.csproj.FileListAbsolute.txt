@@ -36,3 +36,4 @@ F:\王槐三\C#10\GitHub_ Repository\BlogDemo\AuthServer\obj\Debug\netcoreapp2.1
 F:\王槐三\C#10\GitHub_ Repository\BlogDemo\AuthServer\obj\Debug\netcoreapp2.1\AuthServer.RazorTargetAssemblyInfo.cs
 F:\王槐三\C#10\GitHub_ Repository\BlogDemo\AuthServer\obj\Debug\netcoreapp2.1\AuthServer.Views.pdb
 F:\王槐三\C#10\GitHub_ Repository\BlogDemo\AuthServer\obj\Debug\netcoreapp2.1\AuthServer.csproj.CopyComplete
+F:\王槐三\C#10\GitHub_ Repository\BlogDemo\AuthServer\obj\Debug\netcoreapp2.1\AuthServer.csprojAssemblyReference.cache

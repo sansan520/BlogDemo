@@ -39,7 +39,11 @@ namespace AuthServer.Configuration
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         "socialnetwork"
-                    }
+                    },
+                    //如果不加这个，可以看到id_token, 而access_token没有,
+                    //这是因为我们还没有告诉Authorization Server在使用implicit flow时可以允许返回Access token.
+                    //我们需要重新登陆来获取access token
+                    AllowAccessTokensViaBrowser = true
                 }
             };
         }

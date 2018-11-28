@@ -29,3 +29,4 @@ F:\王槐三\C#10\GitHub_ Repository\BlogDemo\MvcClient\obj\Debug\netcoreapp2.1\
 F:\王槐三\C#10\GitHub_ Repository\BlogDemo\MvcClient\obj\Debug\netcoreapp2.1\MvcClient.dll
 F:\王槐三\C#10\GitHub_ Repository\BlogDemo\MvcClient\obj\Debug\netcoreapp2.1\MvcClient.pdb
 F:\王槐三\C#10\GitHub_ Repository\BlogDemo\MvcClient\obj\Debug\netcoreapp2.1\MvcClient.csproj.CopyComplete
+F:\王槐三\C#10\GitHub_ Repository\BlogDemo\MvcClient\obj\Debug\netcoreapp2.1\MvcClient.csprojAssemblyReference.cache

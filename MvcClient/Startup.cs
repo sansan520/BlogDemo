@@ -61,7 +61,8 @@ namespace MvcClient
                 //connect 用来识别用户是否已经登陆了. 同时也可以获得access token. 很明显, 我们不希望access token出现在那个重定向中. 这个一会再说.
                 options.ClientId = "mvc_implicit";
                 //一旦OpenId Connect协议完成, SignInScheme使用Cookie Handler来发布Cookie(中间件告诉我们已经重定向回到MvcClient了, 这时候有token了, 使用Cookie handler来处理).
-
+                //我们想要的是既做Authentication又做Authorization. 也就是说我们既要id_token还要token本身
+                options.ResponseType = "id_token token";
                 //SaveTokens为true表示要把从Authorization Server的Reponse中返回的token们持久化在cookie中.
                 options.SaveTokens = true;
             });

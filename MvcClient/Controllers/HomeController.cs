@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Diagnostics;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MvcClient.Models;
@@ -23,7 +21,15 @@ namespace MvcClient.Controllers
 
             return View();
         }
-
+        /// <summary>
+        /// 有bug,退出后不返回到退出mvc站点，停留在验证服务点
+        /// </summary>
+        /// <returns></returns>
+        public async Task Logout()
+        {
+            await HttpContext.SignOutAsync("Cookies");
+            await HttpContext.SignOutAsync("oidc");
+        }
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
