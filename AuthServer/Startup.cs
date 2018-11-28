@@ -20,6 +20,7 @@ namespace AuthServer
             services.AddIdentityServer()
                  //.AddDeveloperSigningCredential()
                  .AddSigningCredential(new X509Certificate2(@"F:\王槐三\C#10\GitHub_ Repository\BlogDemo\AuthServer\win_openssl\socialnetwork.pfx", "password"))
+                .AddInMemoryIdentityResources(InMemoryConfiguration.GetIdentityResources())
                 .AddTestUsers(InMemoryConfiguration.Users().ToList())
                 .AddInMemoryClients(InMemoryConfiguration.Clients())
                 .AddInMemoryApiResources(InMemoryConfiguration.ApiResources());
