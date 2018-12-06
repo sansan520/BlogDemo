@@ -44,7 +44,27 @@ namespace AuthServer.Configuration
                     //这是因为我们还没有告诉Authorization Server在使用implicit flow时可以允许返回Access token.
                     //我们需要重新登陆来获取access token
                     AllowAccessTokensViaBrowser = true
-                }
+                },
+                // JavaScript Client
+                new Client
+                {
+                    ClientId = "js_client",
+                    ClientName = "JavaScript Client",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
+
+                    RedirectUris =           { "http://localhost:5003/callback.html" },
+                    PostLogoutRedirectUris = { "http://localhost:5003/index.html" },
+                    AllowedCorsOrigins =     { "http://localhost:5003" },
+
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "socialnetwork"
+                    }
+                
+                },
             };
         }
 

@@ -1,0 +1,81 @@
+2018-12-04 16:57:05.806 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-12-04 16:57:19.631 +08:00 [INF] Executed DbCommand (153ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Title]
+FROM [Posts] AS [p]
+2018-12-04 16:57:19.860 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-04 16:57:20.600 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-12-04 16:57:22.906 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/  
+2018-12-04 16:57:23.117 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-12-04 16:57:23.565 +08:00 [INF] Request finished in 661.9463ms 404 
+2018-12-04 17:00:02.890 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-12-04 17:00:02.935 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/posts  
+2018-12-04 17:00:02.974 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-12-04 17:00:03.004 +08:00 [INF] Request finished in 69.8536ms 404 
+2018-12-04 17:00:43.370 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/GetPosts  
+2018-12-04 17:00:43.376 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-12-04 17:00:43.381 +08:00 [INF] Request finished in 10.438ms 404 
+2018-12-04 17:01:04.976 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/GetPosts  
+2018-12-04 17:01:04.981 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-12-04 17:01:04.984 +08:00 [INF] Request finished in 8.2697ms 404 
+2018-12-04 17:01:16.129 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/Posts  
+2018-12-04 17:01:16.143 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-12-04 17:01:16.224 +08:00 [INF] Route matched with {action = "GetHateoas", controller = "Postseed"}. Executing action BlogDemo.Api.Controllers.PostseedController.GetHateoas (BlogDemo.Api)
+2018-12-04 17:01:16.623 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostseedController.GetHateoas (BlogDemo.Api) with arguments (["Blog.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-12-04 17:01:16.709 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-12-04 17:01:17.067 +08:00 [INF] Executed DbCommand (148ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-12-04 17:01:17.130 +08:00 [WRN] Query: '(from Post <generated>_2 in DbSet<Post> select [<generated>_2]).Skip(__p_0).Take(__p_1)' uses a row limiting operation (Skip/Take) without OrderBy which may lead to unpredictable results.
+2018-12-04 17:01:17.263 +08:00 [INF] Executed DbCommand (98ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-12-04 17:01:17.427 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostseedController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 786.7853ms.
+2018-12-04 17:01:17.450 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[Blog.Infrastructure.Resources.LinkResource, Blog.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2018-12-04 17:01:17.517 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostseedController.GetHateoas (BlogDemo.Api) in 1281.0825ms
+2018-12-04 17:01:17.528 +08:00 [INF] Request finished in 1398.7213ms 200 application/vnd.huaisan.hateoas+json; charset=utf-8
+2018-12-04 17:06:59.897 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/Posts  
+2018-12-04 17:06:59.901 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-12-04 17:06:59.909 +08:00 [INF] Request finished in 12.8763ms 404 
+2018-12-04 17:07:48.722 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/Posts  
+2018-12-04 17:07:48.724 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2018-12-04 17:07:48.769 +08:00 [INF] Route matched with {action = "Get", controller = "Postseed"}. Executing action BlogDemo.Api.Controllers.PostseedController.Get (BlogDemo.Api)
+2018-12-04 17:07:48.820 +08:00 [INF] Executing action method BlogDemo.Api.Controllers.PostseedController.Get (BlogDemo.Api) with arguments (["Blog.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2018-12-04 17:07:53.912 +08:00 [INF] Entity Framework Core 2.1.4-rtm-31024 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-12-04 17:07:54.202 +08:00 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Posts] AS [p]
+2018-12-04 17:07:54.217 +08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Author], [p].[Body], [p].[LastModified], [p].[Title]
+FROM [Posts] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2018-12-04 17:07:54.236 +08:00 [INF] Executed action method BlogDemo.Api.Controllers.PostseedController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5409.7384ms.
+2018-12-04 17:07:54.246 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.Dynamic.ExpandoObject, System.Linq.Expressions, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a]]'.
+2018-12-04 17:07:54.257 +08:00 [INF] Executed action BlogDemo.Api.Controllers.PostseedController.Get (BlogDemo.Api) in 5483.5058ms
+2018-12-04 17:07:54.262 +08:00 [INF] Request finished in 5540.2887ms 200 application/json; charset=utf-8

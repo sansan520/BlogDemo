@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Core", "Blog.Core\Blog
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Infrastructure", "Blog.Infrastructure\Blog.Infrastructure.csproj", "{CF44C0C7-665B-44A7-AF8A-AEF656B263A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthServer", "AuthServer\AuthServer.csproj", "{C9D3FE72-49E8-4491-AC71-2FE920DC2E9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthServer", "AuthServer\AuthServer.csproj", "{C9D3FE72-49E8-4491-AC71-2FE920DC2E9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcClient", "MvcClient\MvcClient.csproj", "{541CCCB2-F694-4E08-8CB7-0D2F35CB4D6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcClient", "MvcClient\MvcClient.csproj", "{541CCCB2-F694-4E08-8CB7-0D2F35CB4D6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavaScriptClient", "JavaScriptClient\JavaScriptClient.csproj", "{97DCF35F-EDBE-41A8-B09C-6D9ED0DFDD4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{541CCCB2-F694-4E08-8CB7-0D2F35CB4D6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{541CCCB2-F694-4E08-8CB7-0D2F35CB4D6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{541CCCB2-F694-4E08-8CB7-0D2F35CB4D6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97DCF35F-EDBE-41A8-B09C-6D9ED0DFDD4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97DCF35F-EDBE-41A8-B09C-6D9ED0DFDD4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97DCF35F-EDBE-41A8-B09C-6D9ED0DFDD4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97DCF35F-EDBE-41A8-B09C-6D9ED0DFDD4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
