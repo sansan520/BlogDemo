@@ -1,13 +1,12 @@
-﻿{
+{
   "profiles": {
     "BlogDemo.Api": {
       "commandName": "Project",
       "launchBrowser": true,
-      //"launchUrl": "https://localhost:6001/api/Posts",
-      "applicationUrl": "https://localhost:6001;http://localhost:6000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "applicationUrl": "https://localhost:6001;http://localhost:6000"
     }
   }
 }

@@ -63,8 +63,35 @@ namespace AuthServer.Configuration
                         IdentityServerConstants.StandardScopes.Profile,
                         "socialnetwork"
                     }
-                
                 },
+                // angular Client
+                // Angular client using implicit flow
+                new Client
+                {
+                    ClientId = "blog-client",
+                    ClientName = "Blog Client",
+                    ClientUri = "http://localhost:4200",
+
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
+                    RequireConsent = false,
+                    AccessTokenLifetime = 180,
+
+                    RedirectUris =
+                    {
+                        "http://localhost:4200/signin-oidc",
+                        "http://localhost:4200/redirect-silentrenew"
+                    },
+
+                    PostLogoutRedirectUris = { "http://localhost:4200/" },
+                    AllowedCorsOrigins = { "http://localhost:4200" },
+
+                    AllowedScopes = {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        IdentityServerConstants.StandardScopes.Email,
+                        "socialnetwork" }
+                }
             };
         }
 

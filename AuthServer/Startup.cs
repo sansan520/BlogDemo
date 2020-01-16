@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-
+// modify somthing to check github changed
 namespace AuthServer
 {
     public class Startup
@@ -90,15 +90,15 @@ namespace AuthServer
             //});
 
 
-            //services.AddCors(options =>
-            //{
-            //    options.AddPolicy("AngularDev", policy =>
-            //    {
-            //        policy.WithOrigins("http://localhost:5003")
-            //            .AllowAnyHeader()
-            //            .AllowAnyMethod();
-            //    });
-            //}); 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AngularDev", policy =>
+                {
+                    policy.WithOrigins("http://localhost:4200")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
             //#endregion
 
             //services.AddMvc();
