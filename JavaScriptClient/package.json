@@ -3,6 +3,6 @@
   "name": "asp.net",
   "private": true,
   "devDependencies": {
-    "oidc-client": "1.4.1"
+    "oidc-client": "1.11.5"
   }
 }
